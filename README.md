@@ -1,4 +1,4 @@
-#🌙 LunarVim Configuration: A README full of geeky humor and epicness!
+# 🌙 LunarVim Configuration: A README full of geeky humor and epicness!
 
 Welcome to the incredible world of LunarVim, where code editing becomes a _breeze_ and nerdy jokes are the norm! Get ready to blast off on this interstellar adventure!
 
