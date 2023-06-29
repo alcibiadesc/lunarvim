@@ -90,6 +90,8 @@ local function define_plugins()
 
     -- Utilities
     { "metakirby5/codi.vim" },
+    { "romainl/vim-cool" },  
+
     -- Productivity
     {"takac/vim-hardtime"},
 
@@ -107,6 +109,7 @@ setup_treesitter()
 setup_lsp()
 setup_formatter_linter()
 define_plugins()
+
 
 -- Extra plugins with configurations
 table.insert(lvim.plugins,
@@ -154,6 +157,7 @@ table.insert(lvim.plugins,
 
 
 
+
 -- emmet config
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
@@ -171,3 +175,6 @@ lspconfig.emmet_ls.setup({
       },
     }
 })
+
+
+
