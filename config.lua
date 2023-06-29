@@ -20,6 +20,7 @@ local function set_key_mappings()
       { '<leader>v', ':vsplit<CR>' },
       { '<', ':bprev<CR>' },
       { '>', ':bnext<CR>' },
+      { 'x', ':HardTimeToggle<CR>' },
     },
   }
 
@@ -79,7 +80,6 @@ local function define_plugins()
   lvim.plugins = {
     -- Essentials
     { "windwp/nvim-ts-autotag", config = function() require("nvim-ts-autotag").setup() end },
-    {"tpope/vim-surround"},
 
     -- Themes
     { "ellisonleao/gruvbox.nvim" },
@@ -88,7 +88,11 @@ local function define_plugins()
 
     -- Utilities
     { "metakirby5/codi.vim" },
+    -- Productivity
+    {"takac/vim-hardtime"},
+
     --...
+
   }
 end
 
