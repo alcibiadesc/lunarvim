@@ -94,6 +94,55 @@ local function define_plugins()
 
     -- Productivity
     {"takac/vim-hardtime"},
+    --...
+
+  }
+end
+
+-- Call the functions
+setup_general_config()
+set_key_mappings()
+set_key_mappings_special()
+setup_plugins()
+setup_treesitter()
+setup_lsp()
+setup_formatter_linter()
+define_plugins()
+
+
+-- Extra plugins with configurations
+table.insert(lvim.plugins,
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require('colorizer').setup()
+    end,
+  }
+)
+
+
+table.insert(lvim.plugins,
+  {
+    "f-person/auto-dark-mode.nvim",
+    config = function()
+      local auto_dark_mode = require('auto-dark-mode')
+
+      auto_dark_mode.setup({
+        update_interval = 1000,
+        set_dark_mode = function()
+          vim.api.nvim_set_option('background', 'dark')
+        end,
+        set_light_mode = function()
+          vim.api.nvim_set_option('background', 'light')
+        end,
+      })
+
+      auto_dark_mode.init()
+    end,
+  }
+)
+
+table.insert(lvim.plugins,
 {
   "folke/flash.nvim",
   event = "VeryLazy",
@@ -144,56 +193,7 @@ local function define_plugins()
 }
 
 
-    --...
-
-  }
-end
-
--- Call the functions
-setup_general_config()
-set_key_mappings()
-set_key_mappings_special()
-setup_plugins()
-setup_treesitter()
-setup_lsp()
-setup_formatter_linter()
-define_plugins()
-
-
--- Extra plugins with configurations
-table.insert(lvim.plugins,
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require('colorizer').setup()
-    end,
-  }
 )
-
-
-table.insert(lvim.plugins,
-  {
-    "f-person/auto-dark-mode.nvim",
-    config = function()
-      local auto_dark_mode = require('auto-dark-mode')
-
-      auto_dark_mode.setup({
-        update_interval = 1000,
-        set_dark_mode = function()
-          vim.api.nvim_set_option('background', 'dark')
-        end,
-        set_light_mode = function()
-          vim.api.nvim_set_option('background', 'light')
-        end,
-      })
-
-      auto_dark_mode.init()
-    end,
-  }
-)
-
-
-
 
 
 -- emmet config
