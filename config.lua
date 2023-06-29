@@ -14,13 +14,18 @@ end
 
 -- Set key mappings
 local function set_key_mappings()
+  lvim.builtin.which_key.mappings["V"] = { ":split<CR>", "split window vertically" }
+  lvim.builtin.which_key.mappings["v"] = { ":vsplit<CR>", "split window horizontally" }
+  lvim.builtin.which_key.mappings["x"] = { ":HardTimeToggle<CR>", "toggle hardtime" }
+end
+
+
+-- Set special key mappings
+local function set_key_mappings_special()
   local key_mappings = {
     n = {
-      { '<leader>V', ':split<CR>' },
-      { '<leader>v', ':vsplit<CR>' },
       { '<', ':bprev<CR>' },
       { '>', ':bnext<CR>' },
-      { 'x', ':HardTimeToggle<CR>' },
     },
   }
 
@@ -35,9 +40,6 @@ end
 local function setup_plugins()
   lvim.builtin.alpha.active = true
   lvim.builtin.alpha.mode = "dashboard"
-  lvim.builtin.terminal.active = true
-  lvim.builtin.nvimtree.setup.view.side = "left"
-  lvim.builtin.nvimtree.setup.renderer.icons.show.git = true 
 end
 
 -- Setup treesitter
@@ -99,6 +101,7 @@ end
 -- Call the functions
 setup_general_config()
 set_key_mappings()
+set_key_mappings_special()
 setup_plugins()
 setup_treesitter()
 setup_lsp()
