@@ -143,6 +143,7 @@ table.insert(lvim.plugins,
   }
 )
 
+
 table.insert(lvim.plugins,
 {
   "folke/flash.nvim",
@@ -192,9 +193,8 @@ table.insert(lvim.plugins,
     },
   },
 }
-
-
 )
+
 
 
 -- emmet config
