@@ -81,19 +81,19 @@ end
 local function define_plugins()
   lvim.plugins = {
     -- Essentials
-    { "windwp/nvim-ts-autotag", config = function() require("nvim-ts-autotag").setup() end },
+    { "windwp/nvim-ts-autotag", event = "BufRead", config = function() require("nvim-ts-autotag").setup() end },
 
     -- Themes
-    { "ellisonleao/gruvbox.nvim" },
+    { "ellisonleao/gruvbox.nvim", event = "VeryLazy" },
     { "sainnhe/edge" },
-    { "Mofiqul/dracula.nvim" },
+    { "Mofiqul/dracula.nvim", event = "VeryLazy" },
 
     -- Utilities
-    { "metakirby5/codi.vim" },
+    { "metakirby5/codi.vim", cmd = "Codi"  },
     { "romainl/vim-cool" },  
 
     -- Productivity
-    {"takac/vim-hardtime"},
+    {"takac/vim-hardtime", event = "VeryLazy"},
     --...
 
   }
@@ -114,6 +114,7 @@ define_plugins()
 table.insert(lvim.plugins,
   {
     "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
     config = function()
       require('colorizer').setup()
     end,
