@@ -54,6 +54,7 @@ end
 local function setup_lsp()
   lvim.lsp.installer.setup.ensure_installed = { "svelte" }
   local lsp_opts = {}
+  require("lvim.lsp.manager").setup("svelte", lsp_opts)
   require("lvim.lsp.manager").setup("tailwindcss", lsp_opts)
   require("lvim.lsp.manager").setup("eslint", lsp_opts)
 end
