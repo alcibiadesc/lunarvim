@@ -91,6 +91,7 @@ local function define_plugins()
     -- Utilities
     { "metakirby5/codi.vim", cmd = "Codi"  },
     { "romainl/vim-cool" },  
+    {"kqito/vim-easy-replace", event = "BufRead"}, --leader ra & leader rc
 
     -- Productivity
     {"takac/vim-hardtime", event = "VeryLazy"},
