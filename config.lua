@@ -1,4 +1,3 @@
-
 -- Constants
 local filetypes_common = { "lua", "javascript", "typescript", "html", "css", "vue", "svelte" }
 local treesitter_installed_languages = { "bash", "c", "json", "python", "tsx", "rust", "java", "yaml", unpack(filetypes_common) }
@@ -17,6 +16,8 @@ local function set_key_mappings()
   lvim.builtin.which_key.mappings["V"] = { ":split<CR>", "split window vertically" }
   lvim.builtin.which_key.mappings["v"] = { ":vsplit<CR>", "split window horizontally" }
   lvim.builtin.which_key.mappings["x"] = { ":HardTimeToggle<CR>", "toggle hardtime" }
+
+  lvim.builtin.which_key.mappings["o"] = { ":Oil<CR>", "Open Oil File Explorer" }
 end
 
 
@@ -198,6 +199,14 @@ table.insert(lvim.plugins,
 )
 
 
+table.insert(lvim.plugins,
+{
+  'stevearc/oil.nvim',
+  opts = {},
+  -- Optional dependencies
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+}
+)
 
 -- emmet config
 local lspconfig = require('lspconfig')
