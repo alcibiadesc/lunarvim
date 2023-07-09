@@ -208,6 +208,15 @@ table.insert(lvim.plugins,
 }
 )
 
+table.insert(lvim.plugins,
+{
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {
+  }
+}
+)
+
 -- emmet config
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
