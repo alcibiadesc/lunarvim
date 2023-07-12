@@ -22,8 +22,20 @@ local function set_key_mappings()
   lvim.builtin.which_key.mappings["V"] = { ":split<CR>", "split window vertically" }
   lvim.builtin.which_key.mappings["v"] = { ":vsplit<CR>", "split window horizontally" }
   lvim.builtin.which_key.mappings["x"] = { ":HardTimeToggle<CR>", "toggle hardtime" }
+  
+-- Harpoon KeyMap
+lvim.builtin.which_key.mappings["9"] = {":lua require('harpoon.ui').toggle_quick_menu()<CR>", "open harpoon"}
+lvim.builtin.which_key.mappings["8"] = { ":lua require('harpoon.mark').add_file()<CR>", "Add file" }
 
-  -- Set key mapping for Oil file explorer
+lvim.builtin.which_key.mappings["1"] = { ":lua require('harpoon.ui').nav_file(1)<CR>", "Navigate to file 1" }
+lvim.builtin.which_key.mappings["2"] = { ":lua require('harpoon.ui').nav_file(2)<CR>", "Navigate to file 2" }
+lvim.builtin.which_key.mappings["3"] = { ":lua require('harpoon.ui').nav_file(3)<CR>", "Navigate to file 3" }
+lvim.builtin.which_key.mappings["4"] = { ":lua require('harpoon.ui').nav_file(4)<CR>", "Navigate to file 4" }
+
+
+
+
+-- Set key mapping for Oil file explorer
   lvim.builtin.which_key.mappings["o"] = { ":Oil<CR>", "Open Oil File Explorer" }
 end
 
@@ -130,6 +142,7 @@ local function define_plugins()
   table.insert(lvim.plugins,
     {
       "f-person/auto-dark-mode.nvim",
+      event = "VeryLazy",
       config = function()
         local auto_dark_mode = require('auto-dark-mode')
 
@@ -204,11 +217,23 @@ local function define_plugins()
   table.insert(lvim.plugins,
   {
     'stevearc/oil.nvim',
+     event = "VeryLazy",
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   }
   )
+
+
+  table.insert(lvim.plugins,
+  {
+    'ThePrimeagen/harpoon',
+     event = "VeryLazy",
+    opts = {},
+  }
+  )
+
+
 
 end
 
