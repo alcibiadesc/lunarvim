@@ -31,9 +31,9 @@ lvim.builtin.which_key.mappings["1"] = { ":lua require('harpoon.ui').nav_file(1)
 lvim.builtin.which_key.mappings["2"] = { ":lua require('harpoon.ui').nav_file(2)<CR>", "Navigate to file 2" }
 lvim.builtin.which_key.mappings["3"] = { ":lua require('harpoon.ui').nav_file(3)<CR>", "Navigate to file 3" }
 lvim.builtin.which_key.mappings["4"] = { ":lua require('harpoon.ui').nav_file(4)<CR>", "Navigate to file 4" }
-lvim.builtin.which_key.mappings["4"] = { ":lua require('harpoon.ui').nav_file(4)<CR>", "Navigate to file 4" }
-lvim.builtin.which_key.mappings["4"] = { ":lua require('harpoon.ui').nav_file(4)<CR>", "Navigate to file 4" }
-lvim.builtin.which_key.mappings["4"] = { ":lua require('harpoon.ui').nav_file(4)<CR>", "Navigate to file 4" }
+lvim.builtin.which_key.mappings["5"] = { ":lua require('harpoon.ui').nav_file(5)<CR>", "Navigate to file 5" }
+lvim.builtin.which_key.mappings["6"] = { ":lua require('harpoon.ui').nav_file(6)<CR>", "Navigate to file 6" }
+lvim.builtin.which_key.mappings["7"] = { ":lua require('harpoon.ui').nav_file(7)<CR>", "Navigate to file 7" }
 
 
 
