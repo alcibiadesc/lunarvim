@@ -36,6 +36,8 @@ lvim.builtin.which_key.mappings["6"] = { ":lua require('harpoon.ui').nav_file(6)
 lvim.builtin.which_key.mappings["7"] = { ":lua require('harpoon.ui').nav_file(7)<CR>", "Navigate to file 7" }
 
 
+-- Set Key mapping for todo-comments 
+lvim.builtin.which_key.mappings["t"] = { ":TodoTelescope<CR>", "Open todo comments with telescope" }
 
 
 -- Set key mapping for Oil file explorer
@@ -231,8 +233,23 @@ local function define_plugins()
   table.insert(lvim.plugins,
   {
     'ThePrimeagen/harpoon',
+    dependencies = { "nvim-lua/plenary.nvim" },
      event = "VeryLazy",
     opts = {},
+  }
+  )
+
+
+  table.insert(lvim.plugins,
+  {
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+
+     event = "VeryLazy",
+  opts = 
+
+    {
+    }
   }
   )
 
