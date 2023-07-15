@@ -26,7 +26,6 @@ local function set_key_mappings()
 -- Harpoon KeyMap
 lvim.builtin.which_key.mappings["9"] = {":lua require('harpoon.ui').toggle_quick_menu()<CR>", "open harpoon"}
 lvim.builtin.which_key.mappings["8"] = { ":lua require('harpoon.mark').add_file()<CR>", "Add file" }
-
 lvim.builtin.which_key.mappings["1"] = { ":lua require('harpoon.ui').nav_file(1)<CR>", "Navigate to file 1" }
 lvim.builtin.which_key.mappings["2"] = { ":lua require('harpoon.ui').nav_file(2)<CR>", "Navigate to file 2" }
 lvim.builtin.which_key.mappings["3"] = { ":lua require('harpoon.ui').nav_file(3)<CR>", "Navigate to file 3" }
@@ -36,8 +35,19 @@ lvim.builtin.which_key.mappings["6"] = { ":lua require('harpoon.ui').nav_file(6)
 lvim.builtin.which_key.mappings["7"] = { ":lua require('harpoon.ui').nav_file(7)<CR>", "Navigate to file 7" }
 
 
+-- Set keymapping for Telescope > live grep
+
+lvim.builtin.which_key.mappings["lg"] = {
+    "<cmd>Telescope live_grep<CR>", 
+    "Run Telescope live grep"
+}
+
 -- Set Key mapping for todo-comments 
-lvim.builtin.which_key.mappings["t"] = { ":TodoTelescope<CR>", "Open todo comments with telescope" }
+lvim.builtin.which_key.mappings["T"] = { ":TodoTelescope<CR>", "Open todo comments with telescope" }
+
+
+-- Set keymapping telescope
+lvim.builtin.which_key.mappings["t"] = { ":Telescope<CR>", "Telescope" }
 
 
 -- Set key mapping for Oil file explorer
@@ -147,7 +157,6 @@ local function define_plugins()
   table.insert(lvim.plugins,
     {
       "f-person/auto-dark-mode.nvim",
-      event = "VeryLazy",
       config = function()
         local auto_dark_mode = require('auto-dark-mode')
 
@@ -253,6 +262,20 @@ local function define_plugins()
   }
   )
 
+  table.insert(lvim.plugins, {
+"lukas-reineke/indent-blankline.nvim"
+  })
+
+-- indent-blankline
+
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 
 end
