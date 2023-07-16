@@ -262,11 +262,12 @@ local function define_plugins()
   }
   )
 
+
+-- indent-blankline
   table.insert(lvim.plugins, {
 "lukas-reineke/indent-blankline.nvim"
   })
 
--- indent-blankline
 
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
